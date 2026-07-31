@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FDFBF7;
+  --color-cream-dark: #F7F1E8;
+  --color-wine: #8B1E3F;
+  --color-wine-dark: #6B1730;
+  --color-wine-deeper: #3D1220;
+  --color-blush: #E8D5CE;
+  --color-gold: #D4AF37;
+  --color-gold-deep: #C9A227;
+  --color-green: #1B4332;
+  --color-green-dark: #123024;
+  --color-muted: #5C4A50;
+  --color-subtle: #8A7A80;
+
+  --font-playfair: var(--font-playfair), 'Playfair Display', serif;
+  --font-cormorant: var(--font-cormorant), 'Cormorant Garamond', serif;
+  --font-jakarta: var(--font-jakarta), 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────────────── */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FDFBF7;
+  font-family: var(--font-jakarta, 'Plus Jakarta Sans', sans-serif);
+  -webkit-font-smoothing: antialiased;
+  color: #3D1220;
+  overflow-x: hidden;
+}
+
+a {
+  color: #8B1E3F;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6B1730;
+}
+
+a:hover {
+  color: var(--wine-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── Typography helpers ────────────────────────────────────────────────────── */
+.font-playfair  { font-family: var(--font-playfair); }
+.font-cormorant { font-family: var(--font-cormorant); }
+.font-jakarta   { font-family: var(--font-jakarta); }
+
+/* ─── Scrollbar (subtle) ────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--blush); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--wine); }
+
+/* ─── Focus visible (accessibility) ────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--wine);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
