@@ -3,7 +3,7 @@ import { SYMPLA_URL } from '@/lib/constants';
 export default function Footer() {
   return (
     <footer
-      className="flex flex-col gap-8 items-center text-center pb-24 md:pb-12 px-[clamp(20px,6vw,72px)] pt-[clamp(48px,6vw,72px)] overflow-hidden"
+      className="flex flex-col gap-8 items-center text-center pb-24 md:pb-12 px-[clamp(20px,6vw,72px)] pt-[clamp(40px,5vw,64px)] overflow-hidden"
       style={{
         backgroundColor: '#F7F1E8',
         borderTop: '1.5px solid #D4AF37',
@@ -14,13 +14,15 @@ export default function Footer() {
         <img
           src="/assets/logo-full.png"
           alt="Dia das Mulheres Poderosas Logo"
-          className="h-[75px] sm:h-[88px] md:h-[100px] w-auto max-w-[85vw] object-contain transition-transform duration-200 hover:scale-105"
+          className="flex-none object-contain transition-transform duration-200 hover:scale-105"
+          style={{ height: '68px', width: 'auto', maxHeight: '68px' }}
         />
-        <div className="hidden sm:block w-[1.5px] h-14 bg-[#3D1220]/20" />
+        <div className="hidden sm:block w-[1.5px] h-10 bg-[#3D1220]/20" />
         <img
           src="/assets/logo-organizer.png"
           alt="Maria Zélia Eventos e Representações"
-          className="h-[60px] sm:h-[72px] md:h-[82px] w-auto max-w-[85vw] object-contain transition-transform duration-200 hover:scale-105"
+          className="flex-none object-contain transition-transform duration-200 hover:scale-105"
+          style={{ height: '52px', width: 'auto', maxHeight: '52px' }}
         />
       </div>
 
