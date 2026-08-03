@@ -3,26 +3,26 @@ import { SYMPLA_URL } from '@/lib/constants';
 export default function Footer() {
   return (
     <footer
-      className="flex flex-col gap-8 items-center text-center pb-24 md:pb-12 px-[clamp(20px,6vw,72px)] pt-[clamp(40px,5vw,64px)] overflow-hidden"
+      className="flex flex-col gap-9 items-center text-center pb-24 md:pb-12 px-[clamp(20px,6vw,72px)] pt-[clamp(48px,6vw,72px)] overflow-hidden"
       style={{
         backgroundColor: '#F7F1E8',
         borderTop: '1.5px solid #D4AF37',
       }}
     >
-      {/* Logos Container */}
-      <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap max-w-full px-4">
+      {/* Logos Container - Ampliados e Legíveis */}
+      <div className="flex items-center justify-center gap-8 sm:gap-12 flex-wrap max-w-full px-4">
         <img
           src="/assets/logo-full.png"
           alt="Dia das Mulheres Poderosas Logo"
           className="flex-none object-contain transition-transform duration-200 hover:scale-105"
-          style={{ height: '68px', width: 'auto', maxHeight: '68px' }}
+          style={{ height: '115px', width: 'auto', maxHeight: '115px' }}
         />
-        <div className="hidden sm:block w-[1.5px] h-10 bg-[#3D1220]/20" />
+        <div className="hidden sm:block w-[1.5px] h-16 bg-[#3D1220]/20" />
         <img
           src="/assets/logo-organizer.png"
           alt="Maria Zélia Eventos e Representações"
           className="flex-none object-contain transition-transform duration-200 hover:scale-105"
-          style={{ height: '52px', width: 'auto', maxHeight: '52px' }}
+          style={{ height: '95px', width: 'auto', maxHeight: '95px' }}
         />
       </div>
 
@@ -37,7 +37,7 @@ export default function Footer() {
           <a
             key={item.href}
             href={item.href}
-            className="text-[14px] font-semibold transition-colors duration-200 hover:text-[#8B1E3F]"
+            className="text-[15px] font-semibold transition-colors duration-200 hover:text-[#8B1E3F]"
             style={{ color: '#3D1220' }}
           >
             {item.label}

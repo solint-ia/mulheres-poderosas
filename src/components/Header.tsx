@@ -53,7 +53,7 @@ export default function Header() {
     <header
       ref={headerRef}
       className={`sticky top-0 z-50 transition-all duration-300 px-[clamp(16px,4vw,48px)] ${
-        scrolled ? 'shadow-md bg-[#FDFBF7]/95 backdrop-blur-md py-2.5 md:py-3' : 'bg-[#FDFBF7]/90 backdrop-blur-sm py-3.5 md:py-4'
+        scrolled ? 'shadow-md bg-[#FDFBF7]/95 backdrop-blur-md py-1.5 md:py-2' : 'bg-[#FDFBF7]/90 backdrop-blur-sm py-2 md:py-2.5'
       }`}
       style={{
         borderBottom: '1px solid rgba(139,30,63,0.12)',
@@ -66,10 +66,10 @@ export default function Header() {
             src="/assets/logo-icon.png"
             alt="Dia das Mulheres Poderosas Logo"
             className="flex-none object-contain transition-transform duration-200 group-hover:scale-105"
-            style={{ height: '56px', width: 'auto', maxHeight: '56px' }}
+            style={{ height: '68px', width: 'auto', maxHeight: '68px' }}
           />
           <span
-            className="text-[16px] md:text-[18px] font-bold leading-[1.15] tracking-[0.02em] whitespace-nowrap"
+            className="text-[17px] md:text-[19px] font-bold leading-[1.15] tracking-[0.02em] whitespace-nowrap"
             style={{ fontFamily: "'Playfair Display', serif", color: '#6B1730' }}
           >
             Dia das<br />Mulheres Poderosas
