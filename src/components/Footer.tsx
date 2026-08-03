@@ -1,29 +1,31 @@
-import Image from 'next/image';
+import { SYMPLA_URL } from '@/lib/constants';
 
 export default function Footer() {
   return (
     <footer
-      className="flex flex-col gap-7 items-center text-center pb-24 md:pb-8 px-[clamp(20px,6vw,72px)] pt-[clamp(40px,6vw,64px)]"
+      className="flex flex-col gap-8 items-center text-center pb-24 md:pb-12 px-[clamp(20px,6vw,72px)] pt-[clamp(48px,6vw,72px)] overflow-hidden"
       style={{
         backgroundColor: '#F7F1E8',
-        borderTop: '1px solid #D4AF37',
+        borderTop: '1.5px solid #D4AF37',
       }}
     >
-      <div className="flex items-center gap-6 flex-wrap justify-center">
+      {/* Logos Container */}
+      <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap max-w-full px-4">
         <img
           src="/assets/logo-full.png"
-          alt="Dia das Mulheres Poderosas"
-          style={{ height: '70px', width: 'auto' }}
+          alt="Dia das Mulheres Poderosas Logo"
+          className="h-[75px] sm:h-[88px] md:h-[100px] w-auto max-w-[85vw] object-contain transition-transform duration-200 hover:scale-105"
         />
-        <div style={{ width: '1px', height: '44px', backgroundColor: 'rgba(61,18,32,0.15)' }} />
+        <div className="hidden sm:block w-[1.5px] h-14 bg-[#3D1220]/20" />
         <img
           src="/assets/logo-organizer.png"
           alt="Maria Zélia Eventos e Representações"
-          style={{ height: '56px', width: 'auto' }}
+          className="h-[60px] sm:h-[72px] md:h-[82px] w-auto max-w-[85vw] object-contain transition-transform duration-200 hover:scale-105"
         />
       </div>
 
-      <nav className="flex gap-6 flex-wrap justify-center">
+      {/* Navigation Links */}
+      <nav className="flex gap-6 sm:gap-8 flex-wrap justify-center my-1" aria-label="Navegação do rodapé">
         {[
           { label: 'Palestrantes', href: '#palestrantes' },
           { label: 'Programação', href: '#programacao' },
@@ -33,7 +35,7 @@ export default function Footer() {
           <a
             key={item.href}
             href={item.href}
-            className="text-[13px] font-semibold transition-colors duration-200 hover:text-[#8B1E3F]"
+            className="text-[14px] font-semibold transition-colors duration-200 hover:text-[#8B1E3F]"
             style={{ color: '#3D1220' }}
           >
             {item.label}
@@ -41,13 +43,16 @@ export default function Footer() {
         ))}
       </nav>
 
-      <p className="text-[13px] m-0" style={{ color: '#5C4A50' }}>
-        Dia das Mulheres Poderosas · 24 de Outubro de 2026 · Delmar Hotel, Aracaju/SE
-      </p>
+      {/* Info & Copyright */}
+      <div className="flex flex-col gap-2 items-center">
+        <p className="text-[13.5px] font-medium m-0" style={{ color: '#5C4A50' }}>
+          Dia das Mulheres Poderosas · 24 de Outubro de 2026 · Delmar Hotel, Aracaju/SE
+        </p>
 
-      <p className="text-[12px] m-0" style={{ color: '#8A7A80' }}>
-        © 2026 Maria Zélia Eventos e Representações. Todos os direitos reservados.
-      </p>
+        <p className="text-[12px] m-0" style={{ color: '#8A7A80' }}>
+          © 2026 Maria Zélia Eventos e Representações. Todos os direitos reservados.
+        </p>
+      </div>
     </footer>
   );
 }

@@ -4,6 +4,7 @@ export interface Speaker {
   id: string;
   name: string;
   talk: string;
+  image?: string;
 }
 
 export interface SpeakerGroup {
