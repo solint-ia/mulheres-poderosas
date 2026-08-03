@@ -72,18 +72,18 @@ export default function ScheduleSection() {
         ))}
       </div>
 
-      {/* Timeline Aberta, Moderna e Chamativa (sem estar encapsulada em card fechado) */}
-      <div className="w-full max-w-[800px] mt-4 px-4">
+      {/* Timeline Aberta e Moderna com Nome e Tema da Apresentação */}
+      <div className="w-full max-w-[840px] mt-4 px-4">
         <motion.div
           key={activeShift}
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="relative flex flex-col gap-6 pl-8 sm:pl-12"
+          className="relative flex flex-col gap-8 pl-8 sm:pl-12"
         >
           {/* Linha vertical condutora com gradiente dourado */}
           <div
-            className="absolute left-3 sm:left-4 top-2 bottom-2 w-[3px] rounded-full"
+            className="absolute left-3 sm:left-4 top-3 bottom-3 w-[3px] rounded-full"
             style={{
               background: 'linear-gradient(180deg, #D4AF37 0%, #8B1E3F 100%)',
             }}
@@ -95,7 +95,7 @@ export default function ScheduleSection() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.35, delay: i * 0.08 }}
-              className="relative flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 p-4 rounded-xl hover:bg-[#F7F1E8]/70 transition-all border border-transparent hover:border-[#D4AF37]/30"
+              className="relative flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-8 p-5 rounded-2xl bg-[#F7F1E8]/40 hover:bg-[#F7F1E8]/90 transition-all border border-[rgba(212,175,55,0.25)] shadow-sm hover:shadow-md"
             >
               {/* Ponto reluzente na linha do tempo */}
               <span
@@ -107,18 +107,30 @@ export default function ScheduleSection() {
 
               {/* Horário em Destaque */}
               <div
-                className="text-[14px] font-extrabold tracking-[0.08em] uppercase text-[#8B1E3F] min-w-[130px] flex-none"
+                className="text-[13.5px] font-extrabold tracking-[0.08em] uppercase text-[#8B1E3F] min-w-[130px] flex-none pt-0.5"
                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 {row.time}
               </div>
 
-              {/* Palestrantes / Atividades */}
-              <div
-                className="text-[17px] font-semibold leading-[1.6] text-[#3D1220]"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                {row.speakers}
+              {/* Palestrantes e Temas das Apresentações */}
+              <div className="flex flex-col gap-4 flex-1">
+                {row.items.map((item, itemIdx) => (
+                  <div key={itemIdx} className="flex flex-col gap-1">
+                    <div
+                      className="text-[17px] font-bold text-[#3D1220]"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      {item.speaker}
+                    </div>
+                    <div
+                      className="text-[15px] font-medium leading-[1.45] text-[#8B1E3F]"
+                      style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic' }}
+                    >
+                      {item.talk}
+                    </div>
+                  </div>
+                ))}
               </div>
             </motion.div>
           ))}

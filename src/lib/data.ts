@@ -12,9 +12,14 @@ export interface SpeakerGroup {
   items: Speaker[];
 }
 
+export interface ScheduleItem {
+  speaker: string;
+  talk: string;
+}
+
 export interface ScheduleRow {
   time: string;
-  speakers: string;
+  items: ScheduleItem[];
 }
 
 export interface FaqItem {
@@ -63,19 +68,72 @@ export const speakerGroups: SpeakerGroup[] = [
 // ─── Programação ──────────────────────────────────────────────────────────────
 
 export const shift0Rows: ScheduleRow[] = [
-  { time: '09:00 - 10:00', speakers: 'Dra. Raquel Dosea, Dra. Caroline Vicente, Dra. Caroline Smith' },
-  { time: '10:00 - 10:40', speakers: 'Marcilio e Antonio, Dra. Ramonny' },
-  { time: '11:00 - 11:40', speakers: 'Dr. Guilherme Britto e Gabriela Benevides' },
-  { time: '11:40 - 12:10', speakers: 'Dr. Andre Yochi' },
+  {
+    time: '09:00 - 10:00',
+    items: [
+      { speaker: 'Dra. Raquel Dosea', talk: 'A Beleza Rara da Mulher Empoderada' },
+      { speaker: 'Dra. Caroline Vicente', talk: 'A autoestima quando eu me escolho com estratégia' },
+      { speaker: 'Dra. Caroline Smith', talk: 'Empoderamento Feminino: quando ciência, saúde íntima e longevidade caminham juntas' },
+    ],
+  },
+  {
+    time: '10:00 - 10:40',
+    items: [
+      { speaker: 'Marcilio e Antonio', talk: 'Benefícios voltados a produtos e serviços relacionados à saúde da mulher e Reforma Tributária' },
+      { speaker: 'Dra. Ramonny', talk: 'Importância da NRJ para empresas' },
+    ],
+  },
+  {
+    time: '11:00 - 11:40',
+    items: [
+      { speaker: 'Dr. Guilherme Britto e Gabriela Benevides', talk: 'A mulher por trás da empreendedora de sucesso' },
+    ],
+  },
+  {
+    time: '11:40 - 12:10',
+    items: [
+      { speaker: 'Dr. Andre Yochi', talk: 'Seu DNA, seu maior patrimônio: como a genética pode transformar sua saúde e seu futuro' },
+    ],
+  },
 ];
 
 export const shift1Rows: ScheduleRow[] = [
-  { time: '13:50 - 14:20', speakers: 'Leonardo Lima' },
-  { time: '14:20 - 15:00', speakers: 'Dra. Christiane Espíndola' },
-  { time: '15:00 - 15:40', speakers: 'Italo Marcel' },
-  { time: '16:00 - 16:40', speakers: 'Dra. Gabriela Nabuco e Psicóloga Caroline Guimarães' },
-  { time: '16:40 - 17:20', speakers: 'Dra. Aline Fioravanti' },
-  { time: '17:20 - 18:30', speakers: 'Mara Maravilha (encerramento)' },
+  {
+    time: '13:50 - 14:20',
+    items: [
+      { speaker: 'Leonardo Lima', talk: 'Como encher sua agenda de clientes vendendo todos os dias com IA' },
+    ],
+  },
+  {
+    time: '14:20 - 15:00',
+    items: [
+      { speaker: 'Dra. Christiane Espíndola', talk: 'A nova era da Estética: tecnologia, bioestimuladores e longevidade com naturalidade' },
+    ],
+  },
+  {
+    time: '15:00 - 15:40',
+    items: [
+      { speaker: 'Italo Marcel', talk: 'Sua empresa não precisa vender mais, ela precisa vender melhor' },
+    ],
+  },
+  {
+    time: '16:00 - 16:40',
+    items: [
+      { speaker: 'Dra. Gabriela Nabuco e Psicóloga Caroline Guimarães', talk: 'Saúde da mulher empreendedora: como crescer sem adoecer' },
+    ],
+  },
+  {
+    time: '16:40 - 17:20',
+    items: [
+      { speaker: 'Dra. Aline Fioravanti', talk: 'Autocuidado estratégico: como o MFAT pode integrar beleza, saúde e rotina profissional' },
+    ],
+  },
+  {
+    time: '17:20 - 18:30',
+    items: [
+      { speaker: 'Mara Maravilha', talk: 'Palestra de Encerramento do Evento' },
+    ],
+  },
 ];
 
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
@@ -84,10 +142,6 @@ export const faqItems: FaqItem[] = [
   {
     q: 'Onde fica o Delmar Hotel?',
     a: '[ENDEREÇO COMPLETO], Aracaju/SE. O endereço completo e instruções de acesso serão publicados aqui assim que confirmados.',
-  },
-  {
-    q: 'Terei onde estacionar?',
-    a: '[INFORMAÇÃO DE ESTACIONAMENTO]. Detalhes de estacionamento no local serão adicionados aqui.',
   },
   {
     q: 'Como funciona a compra pelo Sympla?',
