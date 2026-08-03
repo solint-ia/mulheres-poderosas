@@ -36,13 +36,7 @@ function FloralOrn() {
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden flex flex-col items-center text-center gap-6 px-[clamp(16px,5vw,64px)] pt-[clamp(40px,6vw,84px)] pb-[clamp(48px,7vw,96px)] min-h-[calc(100vh-84px)] justify-center bg-[#FDFBF7]"
-      style={{
-        backgroundImage: 'url(/assets/pattern-floral-bg.png)',
-        backgroundSize: '100% 100%',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center center',
-      }}
+      className="relative overflow-hidden flex flex-col items-center text-center gap-6 px-[clamp(16px,5vw,64px)] pt-[clamp(40px,6vw,84px)] pb-[clamp(48px,7vw,96px)] min-h-[calc(100vh-84px)] justify-center bg-[#FDFBF7] bg-[url('/assets/plano-fundo-mobile.png')] md:bg-[url('/assets/pattern-floral-bg.png')] bg-[length:100%_100%] bg-no-repeat bg-center"
     >
       <div className="relative z-10 flex flex-col items-center text-center gap-6 max-w-[960px] w-full mx-auto">
         <motion.div
