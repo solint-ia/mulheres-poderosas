@@ -141,7 +141,7 @@ export const shift1Rows: ScheduleRow[] = [
 export const faqItems: FaqItem[] = [
   {
     q: 'Onde fica o Delmar Hotel?',
-    a: '[ENDEREÇO COMPLETO], Aracaju/SE. O endereço completo e instruções de acesso serão publicados aqui assim que confirmados.',
+    a: 'O evento será realizado no Delmar Hotel, localizado na Av. Santos Dumont, 1500 - Coroa do Meio, Aracaju - SE, CEP 49035-730.',
   },
   {
     q: 'Como funciona a compra pelo Sympla?',
