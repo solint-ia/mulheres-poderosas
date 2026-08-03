@@ -96,9 +96,6 @@ export default function TicketsSection() {
               <span className="text-[11px] font-extrabold tracking-[0.16em] uppercase text-[#8B1E3F]">
                 Passe Individual
               </span>
-              <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-[#F7F1E8] text-[#8B1E3F]">
-                Lote Oficial
-              </span>
             </div>
             <h3 className="text-[26px] font-bold text-[#3D1220] m-0 mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
               Essential
