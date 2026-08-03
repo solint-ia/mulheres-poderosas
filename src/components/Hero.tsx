@@ -39,12 +39,13 @@ export default function Hero() {
       className="relative overflow-hidden flex flex-col items-center text-center gap-6 px-[clamp(16px,5vw,64px)] pt-[clamp(40px,6vw,84px)] pb-[clamp(48px,7vw,96px)] min-h-[calc(100vh-84px)] justify-center bg-[#FDFBF7] bg-[url('/assets/plano-fundo-mobile.png')] md:bg-[url('/assets/pattern-floral-bg.png')] bg-[length:100%_100%] bg-no-repeat bg-center"
     >
       <div className="relative z-10 flex flex-col items-center text-center gap-6 max-w-[960px] w-full mx-auto">
+        {/* Date Pill - Fully Responsive without text clipping */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={0}
-          className="inline-flex items-center gap-[10px] px-5 py-2.5 rounded-full text-[11px] sm:text-[12px] font-bold tracking-[0.12em] uppercase shadow-sm max-w-full overflow-hidden text-ellipsis whitespace-nowrap"
+          className="inline-flex items-center justify-center gap-2 sm:gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10.5px] sm:text-[12px] font-bold tracking-[0.06em] sm:tracking-[0.12em] uppercase shadow-sm max-w-[calc(100vw-32px)] text-center leading-tight whitespace-normal"
           style={{
             border: '1px solid rgba(212,175,55,0.65)',
             backgroundColor: '#FFFFFF',
@@ -52,7 +53,7 @@ export default function Hero() {
           }}
         >
           <span className="w-[6px] h-[6px] rounded-full flex-none" style={{ backgroundColor: '#D4AF37' }} />
-          24 de Outubro de 2026 · Delmar Hotel · Aracaju/SE
+          <span>24 de Outubro de 2026 · Delmar Hotel · Aracaju/SE</span>
         </motion.div>
 
         <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={0.1} className="w-full flex justify-center">
@@ -68,7 +69,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0.2}
-          className="max-w-[880px] m-0 text-[clamp(26px,4.5vw,54px)] font-bold leading-[1.15]"
+          className="max-w-[880px] m-0 text-[clamp(24px,4.5vw,54px)] font-bold leading-[1.15]"
           style={{
             fontFamily: "'Playfair Display', serif",
             color: '#3D1220',
@@ -82,7 +83,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0.3}
-          className="max-w-[680px] m-0 text-[clamp(17px,2vw,24px)] leading-[1.45] font-medium"
+          className="max-w-[680px] m-0 text-[clamp(16px,2vw,24px)] leading-[1.45] font-medium"
           style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontStyle: 'italic',
