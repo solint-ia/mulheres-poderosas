@@ -52,6 +52,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
+      suppressHydrationWarning
       className={`sticky top-0 z-50 transition-all duration-300 px-[clamp(16px,4vw,48px)] ${
         scrolled ? 'shadow-md bg-[#FDFBF7]/95 backdrop-blur-md py-1.5 md:py-2' : 'bg-[#FDFBF7]/90 backdrop-blur-sm py-2 md:py-2.5'
       }`}
@@ -59,7 +60,7 @@ export default function Header() {
         borderBottom: '1px solid rgba(139,30,63,0.12)',
       }}
     >
-      <div className="max-w-[1240px] mx-auto flex items-center justify-between gap-6">
+      <div className="max-w-[1240px] mx-auto flex items-center justify-between gap-4">
         {/* Logo Area */}
         <a href="#" className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-[#8B1E3F] rounded-md p-1 flex-none">
           <img
@@ -69,7 +70,7 @@ export default function Header() {
             style={{ height: '68px', width: 'auto', maxHeight: '68px' }}
           />
           <span
-            className="text-[17px] md:text-[19px] font-bold leading-[1.15] tracking-[0.02em] whitespace-nowrap"
+            className="text-[16px] sm:text-[18px] md:text-[19px] font-bold leading-[1.15] tracking-[0.02em] whitespace-nowrap"
             style={{ fontFamily: "'Playfair Display', serif", color: '#6B1730' }}
           >
             Dia das<br />Mulheres Poderosas
@@ -105,15 +106,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile Hamburger Button */}
-        <div className="flex items-center gap-3 md:hidden">
-          <a
-            href={SYMPLA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[12px] font-bold px-3.5 py-2 rounded bg-[#8B1E3F] text-[#FDFBF7] whitespace-nowrap sm:hidden"
-          >
-            Ingresso
-          </a>
+        <div className="flex items-center md:hidden">
           <button
             type="button"
             className="p-2.5 rounded-lg text-[#3D1220] hover:bg-[#8B1E3F]/10 focus:outline-none focus:ring-2 focus:ring-[#8B1E3F] transition-colors"
@@ -160,7 +153,13 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleLinkClick}
-              className="mt-2 text-center text-[15px] font-bold py-3.5 px-5 rounded-lg bg-[#8B1E3F] text-[#FDFBF7] shadow-md hover:bg-[#6B1730] transition-colors"
+              className="mt-2 text-center text-[15px] font-bold py-3.5 px-5 rounded-lg shadow-md transition-colors"
+              style={{
+                backgroundColor: '#8B1E3F',
+                color: '#FDFBF7',
+              }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = '#6B1730')}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = '#8B1E3F')}
             >
               Garantir Meu Ingresso
             </a>
